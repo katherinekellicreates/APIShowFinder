@@ -47,6 +47,12 @@ struct ShowDetailView: View {
                                    }
                                }
                 
+                // Rating
+                if let rating = show.rating?.average {
+                    Text("⭐️ Rating: \(rating, specifier: "%.1f")")
+                        .font(.subheadline)
+                }
+                
                 // Summary
                 if let summary = show.summary {
                     Text(summary.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression))

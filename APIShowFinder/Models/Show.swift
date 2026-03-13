@@ -15,6 +15,7 @@ struct Show: Codable, Identifiable {
     let network: Network?
     let webChannel: Network?
     let genres: [String]
+    let rating: Rating?
 }
 
 struct ImageLinks: Codable {
@@ -23,5 +24,9 @@ struct ImageLinks: Codable {
 
 struct Network: Codable {
     let name: String
+}
+
+struct Rating: Codable {
+    let average: Double?
 }
 
