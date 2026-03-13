@@ -71,6 +71,14 @@ struct ShowDetailView: View {
                     Text("Unknown")
                 }
                
+                //IMDb Link
+                if let imdbID = show.externals?.imdb,
+                   let url = URL(string: "https://www.imdb.com/title/\(imdbID)/") {
+                    Link("View on IMDb", destination: url)
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                        .padding(.top, 10)
+                }
             }
             .padding()
         }
