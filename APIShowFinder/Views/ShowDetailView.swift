@@ -33,7 +33,19 @@ struct ShowDetailView: View {
                 Text(show.name)
                     .font(.title)
                     .bold()
-              
+                
+                // Genres
+                               if !show.genres.isEmpty {
+                                   HStack {
+                                       ForEach(show.genres, id: \.self) { genre in
+                                           Text(genre)
+                                               .font(.caption)
+                                               .padding(5)
+                                               .background(Color.gray.opacity(0.2))
+                                               .cornerRadius(5)
+                                       }
+                                   }
+                               }
                 
                 // Summary
                 if let summary = show.summary {

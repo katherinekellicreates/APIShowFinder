@@ -14,6 +14,7 @@ struct Show: Codable, Identifiable {
     let image: ImageLinks?
     let network: Network?
     let webChannel: Network?
+    let genres: [String]
 }
 
 struct ImageLinks: Codable {
